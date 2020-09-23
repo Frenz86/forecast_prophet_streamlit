@@ -9,9 +9,9 @@ import streamlit as st  # pylint: disable=import-error
 #FILEPATH = os.path.join(os.getcwd(), "app", "data.json")
 
 ALL = "All Cumulaive Series - No Forecast"
-PRODUCT-A = "Cumulative Product_A"
-PRODUCT-B = "Cumulative Product_B"
-PRODUCT-C = "Cumulative Product_C"
+PRODUCT_A = "Cumulative Product_A"
+PRODUCT_B = "Cumulative Product_B"
+PRODUCT_C = "Cumulative Product_C"
 
 
 @st.cache
@@ -79,7 +79,7 @@ def make_forecast(selection):
 df = load_data('data.json')
 st.write("# Forecast")
 
-selected_series = st.selectbox("Select a data set:", (ALL, PRODUCT-A, PRODUCT-B, PRODUCT-C))
+selected_series = st.selectbox("Select a data set:", (ALL, PRODUCT_A, PRODUCT_B, PRODUCT_C))
 
 if selected_series == ALL:
     cases_series = df["cumulative_cases"]
@@ -89,9 +89,9 @@ if selected_series == ALL:
     plt.title("Global Cumulative Series")
     plt.xlabel("Date")
     plt.ylabel("Prices")
-    plt.plot(cases_series.index, cases_series.values, label=PRODUCT-A)
-    plt.plot(deaths_series.index, deaths_series.values, label=PRODUCT-B)
-    plt.plot(recoveries_series.index, recoveries_series.values, label=PRODUCT-C)
+    plt.plot(cases_series.index, cases_series.values, label=PRODUCT_A)
+    plt.plot(deaths_series.index, deaths_series.values, label=PRODUCT_B)
+    plt.plot(recoveries_series.index, recoveries_series.values, label=PRODUCT_C)
     plt.legend()
 
     st.pyplot()
