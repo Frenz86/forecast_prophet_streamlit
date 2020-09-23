@@ -36,23 +36,23 @@ def load_data(path):
 def make_forecast(selection):
     """Takes a name from the selection and makes a forecast plot."""
 
-    if selection == CASES:
+    if selection == PRODUCT_A:
 
         cumulative_series_name = "cumulative_cases"
-        title = "Daily Cases"
-        x_label = "Cases"
+        title = "Forecast"
+        x_label = "Prices"
 
-    if selection == DEATHS:
+    if selection == PRODUCT_B:
 
         cumulative_series_name = "cumulative_deaths"
-        title = "Daily Deaths"
-        x_label = "Deaths"
+        title = "Forecast"
+        x_label = "Prices"
 
-    if selection == RECOVERIES:
+    if selection == PRODUCT_C:
 
         cumulative_series_name = "cumulative_recoveries"
-        title = "Daily Recoveries"
-        x_label = "Recoveries"
+        title = "Forecast"
+        x_label = "Prices"
 
     prophet_df = (
         df[cumulative_series_name]
