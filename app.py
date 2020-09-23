@@ -8,10 +8,10 @@ import streamlit as st  # pylint: disable=import-error
 
 #FILEPATH = os.path.join(os.getcwd(), "app", "data.json")
 
-ALL = "All Cumulaive Series - No Forecast"
-PRODUCT_A = "Cumulative Product_A"
-PRODUCT_B = "Cumulative Product_B"
-PRODUCT_C = "Cumulative Product_C"
+ALL = "All Products - No Forecast"
+PRODUCT_A = "Product_A"
+PRODUCT_B = "Product_B"
+PRODUCT_C = "Product_C"
 
 
 @st.cache
@@ -77,7 +77,7 @@ def make_forecast(selection):
 
 
 df = load_data('data.json')
-st.write("# Forecast")
+st.write("# Forecast Prices")
 
 selected_series = st.selectbox("Select a data set:", (ALL, PRODUCT_A, PRODUCT_B, PRODUCT_C))
 
@@ -86,7 +86,7 @@ if selected_series == ALL:
     deaths_series = df["cumulative_deaths"]
     recoveries_series = df["cumulative_recoveries"]
 
-    plt.title("Global Cumulative Series")
+    plt.title("Global Products")
     plt.xlabel("Date")
     plt.ylabel("Prices")
     plt.plot(cases_series.index, cases_series.values, label=PRODUCT_A)
