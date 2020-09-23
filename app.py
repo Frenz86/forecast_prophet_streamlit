@@ -39,19 +39,19 @@ def make_forecast(selection):
     if selection == PRODUCT_A:
 
         cumulative_series_name = "cumulative_cases"
-        title = "Forecast"
+        title = "Forecast Product A"
         x_label = "Prices"
 
     if selection == PRODUCT_B:
 
         cumulative_series_name = "cumulative_deaths"
-        title = "Forecast"
+        title = "Forecast Product B"
         x_label = "Prices"
 
     if selection == PRODUCT_C:
 
         cumulative_series_name = "cumulative_recoveries"
-        title = "Forecast"
+        title = "Forecast Product C"
         x_label = "Prices"
 
     prophet_df = (
